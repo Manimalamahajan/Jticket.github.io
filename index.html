@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Journey Tickets</title>
+  
+	<!-- Bootstrap core CSS -->
+		<link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		
+	<!-- Custom fonts for this template -->
+	  <link href="assets/css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
+
+
+	<!--Jquery UI Css-->
+	  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+		 
+	<!-- Custom styles for this template -->
+	 <link href="assets/css/custom.css" rel="stylesheet">
+	  
+	 <!--Animation css -->
+	  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	  
+<style>
+.oneroom {
+    padding: 6px 14px;
+    vertical-align: top;
+}
+.roomrow {
+    display: table;
+    width: 100%;
+	}
+	.bor-bot {
+	border-bottom:1px solid #000;
+}
+.celroe {
+    display: table-cell;
+    padding: 10px;
+    float: none;
+    vertical-align: middle;
+	color:#2d343b;
+	font-size: 12px;
+}
+ .quantity {
+    display: flex;
+    align-items: center;
+    padding: 0;
+	float: right;
+}
+
+.quantity__minus, .quantity__plus {
+color: #000;border: 1px solid #000;
+    display: block;
+    width: 23px;
+    height: 23px;
+    margin: 0px 10px;
+    background: transparent;
+    text-decoration: none !important;
+    text-align: center;
+    line-height: 20px;
+     padding:0;
+	 font-size:15px;
+}
+
+.psngrpopover {
+display:none;
+top: 50px;
+right:0;
+position:absolute;
+width:283px;
+ box-shadow: 0 5px 10px rgba(0,0,0,.2);
+ background:#fff;
+ z-index:999;
+}
+.posrel {
+position:relative;
+}
+.form-check-label {
+color:#000 !important;
+}
+ </style>
+</head>
+<body>
+<!--Header Start-->
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light customBgnav">
+	<div class="container">
+	  <a class="navbar-brand text-uppercase logo border-right" href="#"><img src="assets/img/logo.png" alt="logo" /></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav text-center mr-auto text-uppercase">
+		  <li class="nav-item active">
+			<i class="fa fa-home" aria-hidden="true"></i></br>
+			<a class="nav-link pt-0" href="#">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<i class="fa fa-plane plan-icon" aria-hidden="true"></i>
+			<a class="nav-link pt-0" href="#">Flight</a>
+		  </li>
+		  <li class="nav-item">
+			<i class="fas fa-bed" aria-hidden="true"></i>
+			<a class="nav-link pt-0" href="#">Hotel</a>
+		  </li>
+		  <li class="nav-item dropdown mt-2 ">
+			<a class="nav-link dropdown-toggle more" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  <i class="fa fa-plus" aria-hidden="true" style="font-size:8px;"></i> More
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			  <a class="dropdown-item" href="#">Action</a>
+			  <a class="dropdown-item" href="#">Another action</a>
+			  <div class="dropdown-divider"></div>
+			  <a class="dropdown-item" href="#">Something else here</a>
+			</div>
+		  </li>
+		  
+		</ul>
+			
+		 <ul class="list-inline m-0 headerRightMenu">
+
+			<li class="nav-item dropdown list-inline-item mr-0">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  My Account
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			  <a class="dropdown-item" href="Login.html">Login</a>
+			  <a class="dropdown-item" href="Register.html">Register</a>
+			  
+			</div>
+		  </li>
+		  <li class="nav-item dropdown list-inline-item mr-0">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  Support
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			  <a class="dropdown-item" href="#">Action</a>
+			  <a class="dropdown-item" href="#">Another action</a>
+			  <div class="dropdown-divider"></div>
+			  <a class="dropdown-item" href="#">Something else here</a>
+			</div>
+		  </li>
+		  <li class="nav-item list-inline-item mr-0">
+			<a class="nav-link" href="#">Pay Online</a>
+		  </li>
+		  <li class="nav-item list-inline-item mr-0">
+			<a class="nav-link" href="#">My Trip</a>
+		  </li>
+		   <li class="nav-item list-inline-item mr-0 border-left">
+			<a class="nav-link" href="#"><img src="assets/img/am-flag-icon.png" alt="image" class="flag-icon"/></a>
+		  </li>
+		  <li class="nav-item list-inline-item mr-0 border-right">
+			<a class="nav-link" href="#">$</a>
+		  </li>
+		 </ul>
+	  </div>
+	  </div>
+	</nav>
+	
+</header>
+<!-- Header End-->
+<!--Section Banner Start-->
+<section class="bannerImage">
+	<div class="bannerImgText text-uppercase text-center text-white ">
+		<h4 class="mt-3">Book Flight and Hotel Online</h4>
+	</div>	
+	<div class="bookingTabs">	
+		<div class="">
+			<div class="container">
+			<div class="col-12">
+			<ul class="nav nav-tabs customTab" role="tablist">
+							<li class="nav-item customTabActive text-center">
+								<a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"><i class="fa fa-plane fa-rotate-270" aria-hidden="true"></i> Flight</a>
+							</li>
+							<li class="nav-item text-center">
+								<a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"><img src="assets/img/icons/hotel.png" alt="hotelIcon" class="hotelIcon" /> Hotel</a>
+							</li>
+						</ul><!-- Tab panes -->
+			</div>
+			</div>
+			</div>
+		<div class=" overlayBox">
+		<div class="container">
+				<div class="col-lg-12">
+				<div class=" p-2 mt-3" >		
+				<div class="tab-content">
+				<div class="tab-pane active" id="tabs-1" role="tabpanel">
+					<div class=" box arrow-top1">
+					<ul class=" list-inline">
+					  <li class="list-inline-item">
+						<input type="radio" id="test1" name="radio-group" value="One" checked>
+						<label for="test1">Returntrip</label>
+					  </li>
+					  <li class="list-inline-item">
+						<input type="radio" id="test2" name="radio-group" value="Two">
+						<label for="test2">Oneway</label>
+					  </li>
+					  <li class="list-inline-item">
+						<input type="radio" id="test3" name="radio-group" value="Three">
+						<label for="test3">Multicity</label>
+					  </li>
+					</ul>
+					<!--<ul class="radioTabs list-inline">
+					
+						<li class="list-inline-item"><input type="radio" name="demo" value="One"/><label>Returntrip</label></li>
+						<li class="list-inline-item"><input type="radio" name="demo" value="Two"/><label>Oneway</label></li>
+						<li class="list-inline-item"><input type="radio" name="demo" value="Three"/><label>Multicity</label></li>
+					</ul>-->
+					<div id="showOne" class="myDiv">
+						<form id="MyForm" action="" method="post">
+							<div class="row">
+								<div class="col-lg-3 col-md-3 col-sm-12 pr-0 mb-3 pl-0 formFields">
+									<div class="form-group has-search m-0">
+										
+										<label>Depart From</label>
+										<input type="text" name="name" placeholder="(EBL) Erbil International airportt" class="form-control" />
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3 pl-0 formFields">
+									<div class="form-group has-search m-0">
+									
+									<label>Going To</label>
+									<input type="text" name="name" placeholder="Enter any city/airport" class="form-control"/>
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3 pl-0 formFields">
+								<div class="form-group has-search has-select  m-0">
+									<span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+									<label>Departure</label>
+									<input type="text"  id = "datepicker-2" placeholder="DD/MM/YYYY" class="form-control" />
+								</div>
+							</div>
+								<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3 pl-0 formFields">
+								<div class="form-group has-search  has-select m-0">
+								<span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+									<label>Return</label>
+									<input type="text"  id = "datepicker-3" placeholder="DD/MM/YYYY" class="form-control" />
+								</div>
+							</div>
+								<div class="col-lg-2 col-md-2 col-sm-12  mb-3 pl-0 formFields">
+								<div class="form-group has-search has-select m-0  posrel">
+								
+								<!--<select class="form-control">
+								  <option>1 Adult,Economy</option>
+								  <option>Premium Economy</option>
+								  <option>Buisness</option>
+								  <option>First</option>
+								</select>-->
+								<span><i class="fa fa-users" aria-hidden="true"></i></span>
+								<label>Traveller,Class</label>
+								  <input type="text" class="form-control"  placeholder="1 passenger,Economy" id="select_psngr1">
+								 <div id="myPopover" class="psngrpopover">
+    <i class="fa fa-caret-up" style="color:#ccc;font-size:30px;position: absolute;top: -20px;left: 190px;"></i>
+
+    <div class="popover-body popover-content">
+	<div class="oneroom form-row">
+	
+		<div class="roomrow bor-bot ">
+			<div class="celroe col-xs-4">
+				<span class="agemns adult_input2">1</span> Adult
+				</div>
+			<div class="celroe col-xs-8">
+				<div class="quantity ">
+				   <a href="#" class="quantity__minus adult_minus2"><span>-</span></a>
+				 <a href="#" class="quantity__plus adult_plus2"><span>+</span></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="roomrow bor-bot ">
+			<div class="celroe col-xs-4">
+				<span class="agemns children_input2">0</span> Child 2-12 years
+				</div>
+			<div class="celroe col-xs-8">
+				<div class="quantity ">
+				   <a href="#" class="quantity__minus children_minus2"><span>-</span></a>
+				 <a href="#" class="quantity__plus children_plus2"><span>+</span></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="roomrow bor-bot ">
+			<div class="celroe col-xs-4">
+				<span class="agemns infant_input2">0</span> Infant below 2 years
+				</div>
+			<div class="celroe col-xs-8">
+				<div class="quantity ">
+				   <a href="#" class="quantity__minus infant_minus2"><span>-</span></a>
+				 <a href="#" class="quantity__plus infant_plus2"><span>+</span></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="roomrow mt-2">
+		<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadiosone" id="exampleRadios11" value="Economy" checked>
+  <label class="form-check-label" for="exampleRadios11">
+    Economy
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadiosone" id="exampleRadios12" value=" Premium Economy">
+  <label class="form-check-label" for="exampleRadios12">
+    Premium Economy
+  </label>
+</div>
+<div class="form-check ">
+  <input class="form-check-input" type="radio" name="exampleRadiosone" id="exampleRadios13" value="Bussiness" >
+  <label class="form-check-label" for="exampleRadios13">
+    Bussiness
+  </label>
+</div>
+<div class="form-check ">
+  <input class="form-check-input" type="radio" name="exampleRadiosone" id="exampleRadios14" value="First Class" >
+  <label class="form-check-label" for="exampleRadios14">
+    First Class
+  </label>
+</div>
+	</div>	
+
+	</div>
+	
+		<div class="roomrow" style="text-align:right;">
+		 <button style="border: 1px solid  #298eefe3;text-transform:initial;color: #fff;font-size: 15px;width: 40%;padding: 6px 20px;background:#7B1FA2;" type="button" class="btn   col-12 done1">Done</button>
+</div>
+</div>
+</div>
+								  </div>
+								</div>
+								<div class="col-lg-1 col-md-1 col-sm-12 px-0">
+									<input type="sumbit" class="btn btn-danger form-control customBtn" name="submit" value="Search"/>
+								</div>
+							</div>
+							<!--<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search m-0">
+									<img src="img/cal.png" alt="location" class="form-control-feedback cal-icon">
+									<label>Departure</label>
+									<input type="text"  id = "datepicker-1" placeholder="DD/MM/YYYY" class="form-control" />
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search has-select m-0">
+								<span><i class="fa fa-user" aria-hidden="true"></i></span>
+								<label>Adults (12+)</label>
+								<select class="form-control">
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								  <option>4</option>
+								  <option>5</option>
+								  <option>6</option>
+								  <option>7</option>
+								  <option>8</option>
+								  <option>9</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search has-select m-0">
+								<span><i class="fa fa-child" aria-hidden="true"></i></span>
+								<label>Child (2-11)</label>
+								<select class="form-control">
+								  <option>0</option>
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search has-select m-0">
+								<span><i class="fa fa-users" aria-hidden="true"></i></span>
+								<label>Infants (0-2)</label>
+								<select class="form-control">
+								  <option>0</option>
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-12 mb-3">
+								<input type="sumbit" class="btn btn-danger form-control" name="submit" value="Search"/>
+							</div>
+							</div>-->
+						</form>
+						</div>					
+					<div id="showTwo" class="myDiv">
+						<!--<form id="MyForm" action="" method="post">
+							<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search m-0">
+									<img src="img/location.png" alt="location" class="form-control-feedback">
+									<label>Leaving From</label>
+									<input type="text" name="name" placeholder="Enter any city/airport" class="form-control" />
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search m-0">
+									<img src="img/location.png" alt="location" class="form-control-feedback">
+									<label>Going To</label>
+									<input type="text" name="name" placeholder="Enter any city/airport" class="form-control"/>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+								<div class="form-group has-search has-select m-0">
+								<img src="img/bed.png" alt="location" class="form-control-feedback bed-icon">
+								<label>Class</label>
+								<select class="form-control">
+								  <option>Economy</option>
+								  <option>Premium Economy</option>
+								  <option>Buisness</option>
+								  <option>First</option>
+								</select>
+								</div>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search m-0">
+									<img src="img/cal.png" alt="location" class="form-control-feedback cal-icon">
+									<label>Departure</label>
+									<input type="text"  id = "datepicker-2" placeholder="DD/MM/YYYY" class="form-control" />
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search m-0">
+									<img src="img/cal.png" alt="location" class="form-control-feedback cal-icon">
+									<label>Return</label>
+									<input type="text"  id = "datepicker-3" placeholder="DD/MM/YYYY" class="form-control" />
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search has-select m-0">
+									<span><i class="fa fa-user" aria-hidden="true"></i></span>
+									<label>Adults (12+)</label>
+									<select class="form-control">
+									  <option>1</option>
+									  <option>2</option>
+									  <option>3</option>
+									  <option>4</option>
+									  <option>5</option>
+									  <option>6</option>
+									  <option>7</option>
+									  <option>8</option>
+									  <option>9</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search has-select m-0">
+									<span><i class="fa fa-child" aria-hidden="true"></i></span>
+									<label>Child (2-11)</label>
+									<select class="form-control">
+									  <option>0</option>
+									  <option>1</option>
+									  <option>2</option>
+									  <option>3</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search has-select m-0">
+									<span><i class="fa fa-users" aria-hidden="true"></i></span>
+									<label>Infants (0-2)</label>
+									<select class="form-control">
+									  <option>0</option>
+									  <option>1</option>
+									  <option>2</option>
+									  <option>3</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 mb-3">
+								<input type="sumbit" class="btn btn-danger form-control" name="submit" value="Search"/>
+							</div>
+							</div>
+						</form>-->
+					</div>
+					<div id="showThree" class="myDiv">
+						<!--<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-12 pr-0 ">
+								<label class="fontBig">Flight 1</label>
+							</div>
+							<div class="Leaving From col-md-3 col-sm-12 pr-0 mb-3">
+							<div class="form-group has-search m-0">
+								<img src="img/location.png" alt="location" class="form-control-feedback">
+								<label>Leaving From</label>
+								<input type="text" name="name" placeholder="Enter any city/airport" class="form-control"/>
+							</div>
+							</div>
+							<div class="Leaving From col-md-3 col-sm-12 pr-0 mb-3">
+							<div class="form-group has-search m-0">
+								<img src="img/location.png" alt="location" class="form-control-feedback">
+								<label>Going To</label>
+								<input type="text" name="name" placeholder="Enter any city/airport" class="form-control"/>
+							</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-12 mb-3">
+							<div class="form-group has-search m-0">
+								<img src="img/cal.png" alt="location" class="form-control-feedback cal-icon">
+								<label>Departure</label>
+								<input type="text"  id = "datepicker-4" placeholder="DD/MM/YYYY" class="form-control" />
+							</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 mb-3 flight-btn">
+								<button type="button" class="btn btn-danger "> + Add More Flights</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-12">
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search has-select m-0">
+								<span><i class="fa fa-user" aria-hidden="true"></i></span>
+								<label>Adults (12+)</label>
+								<select class="form-control">
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								  <option>4</option>
+								  <option>5</option>
+								  <option>6</option>
+								  <option>7</option>
+								  <option>8</option>
+								  <option>9</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search has-select m-0">
+								<span><i class="fa fa-child" aria-hidden="true"></i></span>
+								<label>Child (2-11)</label>
+								<select class="form-control">
+								  <option>0</option>
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 pr-0 mb-3">
+								<div class="form-group has-search has-select m-0">
+								<span><i class="fa fa-users" aria-hidden="true"></i></span>
+								<label>Infants (0-2)</label>
+								<select class="form-control">
+								  <option>0</option>
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 mb-3">
+								<input type="sumbit" class="btn btn-danger form-control" name="submit" value="Search"/>
+							</div>
+						</div>-->
+							
+							</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="tabs-2" role="tabpanel">
+				<div class=" box arrow-top2">
+					<!--<form action="#" method="post" novalidate="novalidate">
+					<div class=" box arrow-top">
+					<div class="row">
+						<div class="col-lg-4 col-md-6 col-sm-12 col-12 pr-0 mb-3">
+							  <div class="form-group has-search m-0">
+								<img src="img/location.png" alt="location" class="form-control-feedback">
+								<label>Destination</label>
+								<input type="text" class="form-control  " placeholder="DXB-Dubai Airport,United Arab Emirates">
+							  </div>
+						</div>
+						<div class="col-lg-2 col-md-5 col-sm-12 col-12 pr-0 mb-3">
+								<div class="form-group has-search m-0">
+									<img src="img/cal.png" alt="location" class="form-control-feedback cal-icon">
+									<label>Check-in</label>
+									<input type = "text" id = "datepicker-5" class="form-control">
+								</div>
+						</div>
+						<div class="col-lg-2 col-md-6 col-sm-12 col-12  pr-0 mb-3">
+								<div class="form-group has-search m-0">
+									<img src="img/cal.png" alt="location" class="form-control-feedback cal-icon">
+									<label>Check-out</label>
+									<input type = "text" id = "datepicker-6" class="form-control">
+								</div>
+						</div>
+						<div class="col-lg-2 col-md-5 col-sm-12 col-12  pr-0 mb-3">
+								<div class="form-group has-search has-select m-0">
+								<img src="img/bed.png" alt="location" class="form-control-feedback bed-icon">
+								<label>Rooms</label>
+								<select class="form-control">
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								  <option>4</option>
+								</select>
+								</div>
+						</div>
+						<div class=" col-lg-2 col-md-12 col-sm-12 col-12  button-sec mb-3">
+								<button type="button" class="btn btn-danger btn-block">Search</button>
+						</div>
+					</div>
+					</div>
+				</form>
+				</div>-->
+				</div>
+			</div>
+				<!--<div class="advance-option">
+				<select class="form-control">
+					<option selected>Advance Option...</option>
+					<option>option 1</option>
+				</select>
+				</div>-->
+				</div>
+             </div>
+		</div>	
+		</div>
+		</div>
+	
+	  <!--Hero Images End-->
+</section> 
+ <div class="clearfix"></div>
+<!--Section Banner End-->
+<!--Find your Ideal Flight start-->
+<section class="findFlight pt-5">
+	<div class="container">
+		<div class="row">
+			<div class="col section-heading text-center" >
+				<h4><strong>Find your Ideal Flight</strong></h4>
+				<p class="mb-4">ouers ﬂight bookings with hundreds of airlines, to destinations all around the world</p>
+			</div>
+			</div>
+        <div class="row blog text-center">
+                <div class="col-md-12">
+                    <div id="blogCarouselFlight" class="carousel slide " data-ride="carousel" >
+
+                        <!--<ol class="carousel-indicators">
+                            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#blogCarousel" data-slide-to="1"></li>
+							<li data-target="#blogCarousel" data-slide-to="1"></li>
+                        </ol>-->
+
+                        <!-- Carousel items -->
+                        <div class="carousel-inner text-center">
+
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/01pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/02pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/03pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/04pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--.row-->
+                            </div>
+                            <!--.item-->
+
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/01pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/02pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/03pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/04pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--.row-->
+                            </div>
+                            <!--.item-->
+							
+							   <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/02pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/02pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/02pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/02pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--.row-->
+                            </div>
+
+                        </div>
+                        <a class="left carousel-control" href="#blogCarouselFlight" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+						<a class="right carousel-control" href="#blogCarouselFlight" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					   <!--.carousel-inner-->
+                    </div>
+                    <!--.Carousel-->
+
+                </div>
+		
+	</div>
+	</div>
+</section>
+<!--Find your Ideal Hotel End-->
+
+<!--Find your Ideal Hotel start-->
+<section class="findHotel pt-5">
+	<div class="container">
+		<div class="row">
+			<div class="col section-heading text-center" >
+				<h4><strong>Find Your Ideal Hotel</strong></h4>
+				<p class="mb-4">offer ﬂight bookings with hundreds of airlines, to destinations all around the world</p>
+			</div>
+			</div>
+        <div class="row blog text-center">
+                <div class="col-md-12">
+                    <div id="blogCarousel" class="carousel slide" data-ride="carousel" >
+                        <!--<ol class="carousel-indicators">
+                            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#blogCarousel" data-slide-to="1"></li>
+							<li data-target="#blogCarousel" data-slide-to="1"></li>
+                        </ol>-->
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/01pic.jpg" alt="Image" style="max-width:100%;" class="img-fluid">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/02pic.jpg" alt="Image" style="max-width:100%;" class="img-fluid">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                   <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/03pic.jpg" alt="Image" style="max-width:100%;" class="img-fluid">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p class="float-left pr-2">Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/04pic.jpg" alt="Image" style="max-width:100%;" class="img-fluid">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                </div>
+                                <!--.row-->
+                            </div>
+                            <!--.item-->
+
+                            <div class="carousel-item">
+                               <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/01pic.jpg" alt="Image" style="max-width:100%;" class="img-fluid">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/02pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                   <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/03pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/04pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                </div>
+                                <!--.row-->
+                            </div>
+                            <!--.item-->
+							
+							   <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/01pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/02pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                   <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/03pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 hotelBlog text-left pr-0">
+										<div class="hotelImg">
+                                        <a href="#">
+                                            <img src="assets/img/flightImg/04pic.jpg" alt="Image" style="max-width:100%;">
+                                        </a>
+										<div class="overlayLayer">
+										</div>
+										<div class="hotelImgInside">
+										<p>Dedamad Ebril Hotel</p>
+										<span class="ratingStyle">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										</span>
+										<p style="font-size:9px;">Very good based on 780 views</p>
+										</div>
+										</div>
+										<div class="hotelContent">
+											<div class="contentLeft">
+											<h5>Perks</h5>
+											<ul>
+												<li>Complimentary Wifi</li>
+												<li>Larger then avarage Rooms</li>
+												<li>Late Night avaialable</li>
+											</ul>
+											</div>
+											<div class="contentRight border-left pl-3">
+											<h5>$278</h5>
+											<p>Avarage per night</p>
+											<button type="button">See Details</button>
+											</div>
+										</div>
+                                    </div>
+                                </div>
+                                <!--.row-->
+                                <!--.row-->
+                            </div>
+
+                        </div>
+                        <a class="left carousel-control" href="#blogCarousel" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+						<a class="right carousel-control" href="#blogCarousel" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					   <!--.carousel-inner-->
+                    </div>
+                    <!--.Carousel-->
+
+                </div>
+		
+	</div>
+	</div>
+</section>
+<!--Find your Ideal Hotel End-->
+<!--Whats New section start-->
+<section class="whatsNew py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col section-heading text-center" >
+				<h4><strong>What’s New</strong></h4>
+				<p class="mb-4">Offer ﬂight bookings with hundreds of airlines, to destinations all around the world</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-12 pr-0">
+				<img src="assets/img/whtNew/image1.jpg" alt="image" class="img-fluid" style="width: 419px;" />
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-12 pr-0">
+				<img src="assets/img/whtNew/image2.jpg" alt="image" class="img-fluid" />
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-12 pr-0">
+				<img src="assets/img/whtNew/image3.jpg" alt="image" class="img-fluid" />
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-12">
+			<hr>
+				<p class="mb-0">Cheap ﬂights are available at Journeyticket.com, one of the leading travel portals of Erbil. The company offer great discounts on domestic and international ﬂight tickets. Being a reliable name in travel industry of Erbil, we focus on providing smooth ﬂight booking experience to our customers. So, book air tickets at the lowest airfare by planning your trip with us. You can also get all relevant information like how to get the boarding passes, difference between airline tickets and boarding pass tickets, ﬂight status, arrival and departure times of the ﬂights, web check-in and various information one needs to have before traveling.</p>
+				<p >If you want to book your plane tickets at no convenience fee and looking for transparency in air ticket pricing, we are here to serve you with best possible offer. To reduce your ﬂight booking cost, we have tied up with several banking partners. You can avail the best ﬂight ticket booking deals for all major low cost carriers of Erbil and abroad with us. Last minute discounts on air ticket booking are also available with us. So, go for a journey of your preferred destinations with the best airfare discounts.
+				</p>
+				<p class="mb-0"><strong>How do you ﬁnd the cheapest airfare?</strong></p>
+				<p>To ﬁnd the cheapest airfare, you can visit our site or download the app and enter your departure and arrival cities and ﬁnd out the cheapest days to ﬂy with our fare calendar. In compare to full service carriers, low cost airlines offer cheaper fares. By considering budget airlines, you can do great savings on airline tickets.</p>
+				<p class="mb-0"><strong>What is the best day of the week to buy plane tickets?</strong></p>
+				<p>As per previous ﬁndings, the best day to book cheapest ﬂight tickets was Tuesday, but it’s not anymore. As more number of business travelers has started booking their ﬂights during the week, the best day to buy those tickets is now Sunday. To avail more savings on ﬂight tickets, try to book on a Sunday that is more than 21 days ahead of your trip.</p>
+				<p class="mb-0"><strong>Is it cheaper to book ﬂights last minute?</strong></p>
+				<p>There is a popular belief that if you book ﬂights in advance, your air tickets will be cheaper. However, contrary to the popular belief, booking airline tickets late is often cheaper. As per the research, ﬂight tickets are generally cheaper if booked three weeks before departure than tickets booked 6 months ahead. But, this is not necessary. The price of ﬂights ﬂuctuate daily or even hourly in various cases. Many times, it changes due to the increasing demand of a particular route by the passengers. So, sometimes ﬂights get cheaper while traveling closer to the travel date and in some cases, it gets expensive.</p>
+				<p class="mb-0"><strong>How can I ﬂy for free?</strong></p>
+				<p>At present, Journeyticket.com has an ouer to avail free ﬂight tickets worth Rs.5000 daily. However, there are many other options like loyalty points, frequent ﬂyer credit cards from diuerent banks and availing free ﬂights with miles that may help you in ﬂying for free.</p>
+			</div>
+		<div>
+</div>
+</section>
+<!--whats New Section End-->
+<!--why book with us section start-->
+<section class="whyUS  text-white">
+	<div class="container">
+			<div class="row">
+			<div class="col section-heading text-center " >
+				<h4 class=" text-center">Why Book With Us ?</h4>
+				<p>We provide you the cheapest fares for International & Domestic Flight & Hotels. www.JOURNEYTICKETS.in offer great offer, some of the lowest airfares, exclusive discounts and a seamless online booking experience.</p>
+			</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-12 text-center" >
+					<img src="assets/img/icons/1.png" alt="icon1" width="60" height="60" class="mb-3">
+					<h4>EASY BOOKING</h4>
+					<p>We offer easy and convenient and best ﬂight & hotel bookings with attractive</p>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 text-center" >
+					<img src="assets/img/icons/2.png" alt="icon1" width="60" height="60" class="mb-3">
+					<h4>LOWEST PRICE</h4>
+					<p>We provide lowest rates on ﬂights & hotel reservation.</p>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 text-center" >
+					<img src="assets/img/icons/3.png" alt="icon1" width="60" height="60" class="mb-3">
+					<h4>24X7 SUPPORT</h4>
+					<p>We are happy to assist you as our agents will be there to answer your</p>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 text-center" >
+					<img src="assets/img/icons/4.png" alt="icon1" width="60" height="60" class="mb-3">
+					<h4>EXCITING OFFERS</h4>
+					<p>Travel related queries 24/7 We provide grate ouers & deals</p>
+				</div>
+			</div>
+			
+		</div>
+</section>
+<!---why book with us section Section End-->
+<!--Footer Section Start-->
+<footer class="py-5">
+	<hr>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-12 col-12 footerSection">
+				<h5 class="text-uppercase footerHeading">Need journey ticket help ?</h5>
+				<div class="needHelp mb-3">
+					<img src="assets/img/image20.png" alt="call" class="float-left call-icon mr-1"/>
+					<span>Got Questions? Call 24/7 !</span>
+					<p class="callUs">Call Us : +(1) 800 123 6766</p>
+				</div>
+				<div class="clearfix"></div>
+				<div class="contactInfo">
+					<h6><strong>Contact Info</strong></h6>
+					<p>Address is a collection of information, Presented in a mostly ﬁxed format, used</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-12 col-12 footerSection ">
+				
+				<ul class="pl-4">
+				<h5 class="text-uppercase footerHeading">COMPANY</h5>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Terms of Use</a></li>
+						<li><a href="#">Privacy Statement </a></li>
+						<li><a href="#">Give Us FeedBacks</a></li>
+						<li><a href="#">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-12 col-12 footerSection pl-3">
+				
+				<ul class="pl-4">
+				<h5 class="text-uppercase footerHeading">OTHER SERVICES</h5>
+						<li><a href="#">Investor Relations </a></li>
+						<li><a href="#">Rewards Program </a></li>
+						<li><a href="#">PointsPLUS </a></li>
+						<li><a href="#">Partners </a></li>
+						<li><a href="#">List Journey Tickets</a></li>
+						<li><a href="#">Sitemap</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-12 col-12 footerSection">
+				<h5 class="text-uppercase footerHeading">FOLLOW US ON</h5>
+				<p>Sign up for our mailing list to get latest update and offers. </p>
+					 <div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="Enter Your Email">
+						<div class="input-group-append">
+							<button class="btn btn-secondary py-0" type="button" >
+							SUBMIT
+							</button>
+						</div>
+					</div>
+					<ul class="list-inline social-buttons pl-0" >
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fab fa-facebook-f"></i>
+						</a>
+					  </li>
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fab fa-twitter"></i>
+						</a>
+					  </li>
+					  
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fab fa-youtube"></i>
+						</a>
+					  </li>
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fab fa-instagram"></i>
+						</a>
+					  </li>
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+						</a>
+					  </li>
+				</ul>				
+			</div>
+		</div>
+	</div>
+</footer>
+<!--Footer Section End-->
+<hr>
+<!--CopyRight section start-->
+<section class="copyRight">
+	<div class="container">
+		<div class="row">
+		<div class="col-12">
+		<p class="m-0 float-left">© 2019 Journeyticket.com Designed And Developed By Tkies.com</p>
+		<ul class="list-inline float-right">
+			<li class="list-inline-item" ><a href="#" class="border-right pr-3">Privacy Policy</a></li>
+			<li class="list-inline-item"><a href="#">Terms & Condiations</a></li>
+		</ul>
+		</div>
+		</div>
+	</div>
+</section>
+<!--CopyRight section end-->
+  
+  <script>
+	// optional
+		$('#blogCarouselFlight').carousel({
+				interval: 5000
+		});
+  </script>
+   
+  <script>
+	// optional
+		$('#blogCarousel').carousel({
+				interval: 5000
+		});
+  </script>
+  <!--Jquery file-->
+ <script src="assets/js/jquery/jquery.min.js"></script>
+  <!--Propper min.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <!---Bootstrap JavaScript file-->
+  <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+  
+  <!--Jquery ui js-->
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <!-- Plugin JavaScript -->
+ <!--<script src="assets/jquery-easing/jquery.easing.min.js"></script>-->
+   <!-- Custom scripts for this template -->
+  <!--<script src="assets/stylish-portfolio.min.js"></script>-->
+  <!--Animation js-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+		AOS.init();
+  </script>
+  <script>
+         $(function() {
+		   $( "#datepicker-6" ).datepicker({
+               beforeShowDay : function (date) {
+                  var dayOfWeek = date.getDay ();
+                  // 0 : Sunday, 1 : Monday, ...
+                  if (dayOfWeek == 0 || dayOfWeek == 6) return [false];
+                  else return [true];
+               }
+            });
+            $( "#datepicker-5" ).datepicker({
+               beforeShowDay : function (date) {
+                  var dayOfWeek = date.getDay ();
+                  // 0 : Sunday, 1 : Monday, ...
+                  if (dayOfWeek == 0 || dayOfWeek == 6) return [false];
+                  else return [true];
+               }
+            });
+			 $( "#datepicker-4" ).datepicker({
+               beforeShowDay : function (date) {
+                  var dayOfWeek = date.getDay ();
+                  // 0 : Sunday, 1 : Monday, ...
+                  if (dayOfWeek == 0 || dayOfWeek == 6) return [false];
+                  else return [true];
+               }
+            });
+			$( "#datepicker-3" ).datepicker({
+               beforeShowDay : function (date) {
+                  var dayOfWeek = date.getDay ();
+                  // 0 : Sunday, 1 : Monday, ...
+                  if (dayOfWeek == 0 || dayOfWeek == 6) return [false];
+                  else return [true];
+               }
+            });
+			 $( "#datepicker-2" ).datepicker({
+               beforeShowDay : function (date) {
+                  var dayOfWeek = date.getDay ();
+                  // 0 : Sunday, 1 : Monday, ...
+                  if (dayOfWeek == 0 || dayOfWeek == 6) return [false];
+                  else return [true];
+               }
+            });
+			 $( "#datepicker-1" ).datepicker({
+               beforeShowDay : function (date) {
+                  var dayOfWeek = date.getDay ();
+                  // 0 : Sunday, 1 : Monday, ...
+                  if (dayOfWeek == 0 || dayOfWeek == 6) return [false];
+                  else return [true];
+               }
+            });
+         });
+      </script>
+
+     <!-- <script> -->
+	 
+		<!-- $(document).ready(function(){ -->
+
+		   <!-- $('input[type="radio"]').click(function(){ -->
+				
+				<!-- var demovalue = $(this).val();  -->
+				<!-- $("div.myDiv").hide(); -->
+				
+				<!-- $("#show"+demovalue).show(); -->
+			<!-- }); -->
+		<!-- }); -->
+	<!-- </script> -->
+		  <script>
+	  $(document).ready(function(){
+	  		$('.dropdown-menu li').on('click', function() {
+  var getValue = $(this).text();
+  $('.dropdown-select').text(getValue);
+});
+});
+	  </script>
+  <script>
+ $(document).ready(function () {
+ var dropDownOpened = false;
+  $(document).on('click', '#select_psngr1', function (e) {
+		 e.preventDefault();
+		$('.psngrpopover').toggle();
+		dropDownOpened = true;
+		});
+ $('.children_minus2').click(function (e) {
+        e.preventDefault();
+        var value = $('.children_input2').text();
+        if (value > 0) {
+            value--;
+        }
+        $('.children_input2').text(value);
+		calculatePassenger();
+    });
+
+    $('.children_plus2').click(function (e) {
+        e.preventDefault();
+        var value = $('.children_input2').text();
+        value++;
+        $('.children_input2').text(value);
+		calculatePassenger();
+    });
+
+    $('.adult_minus2').click(function (e) {
+        e.preventDefault();
+        var value = $('.adult_input2').text();
+        if (value > 1) {
+            value--;
+        }
+        $('.adult_input2').text(value);
+		calculatePassenger();
+    });
+
+    $('.adult_plus2').click(function (e) {
+        e.preventDefault();
+        var value = $('.adult_input2').text();
+        value++;
+        $('.adult_input2').text(value);
+		calculatePassenger();
+    });
+
+    $('.infant_minus2').click(function (e) {
+        e.preventDefault();
+        var value = $('.infant_input2').text();
+        if (value > 0) {
+            value--;
+        }
+        $('.infant_input2').text(value);
+		calculatePassenger();
+    });
+
+    $('.infant_plus2').click(function (e) {
+        e.preventDefault();
+        var value = $('.infant_input2').text();
+        value++;
+        $('.infant_input2').text(value);
+		calculatePassenger();
+    });
+	
+               
+            
+  $("input[type='radio'][name='exampleRadiosone']").on('change', function() {
+    selectedVal = this.value;
+	calculatePassenger(selectedVal);
+  });
+
+	
+	
+function calculatePassenger(radioValue) {
+    var person = 0;
+	  var radioValue = $("input[type='radio'][name='exampleRadiosone']:checked").val();
+        person = parseInt(person) + parseInt($('.children_input2').text()) + parseInt($('.adult_input2').text()) + parseInt($('.infant_input2').text());
+      
+    var _selectText =  parseInt(person) + ' Passengers'+','+ (radioValue);
+    $("#select_psngr1").val(_selectText);
+}
+    $(document).on('click', '.done1', function (e) {
+	    e.preventDefault();
+        $('.psngrpopover').hide();
+        
+    });	
+    $(document).on('click', function (e){
+            var container = $('.posrel');
+            if (dropDownOpened) {
+                if ( !container.is(e.target) && container.has(e.target).length === 0 ) {
+                     $('.psngrpopover').hide();
+                }
+            }
+
+        });
+ 	});
+ </script>
+</body>
+</html>

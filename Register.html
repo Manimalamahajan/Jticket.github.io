@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Journey Tickets</title>
+  
+	<!-- Bootstrap core CSS -->
+		<link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		
+	<!-- Custom fonts for this template -->
+	  <link href="assets/css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	  <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
+
+	  <!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />-->
+	  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+	<!--Jquery UI Css-->
+	  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+		 
+	<!-- Custom styles for this template -->
+	 <link href="assets/css/custom.css" rel="stylesheet">
+	  
+	 <!--Animation css -->
+	  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	  
+<!--<style>
+.myDiv{
+	display:none;
+}  
+</style>-->
+</head>
+<body class="positionRel">
+<!--Header Start-->
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light customBgnav">
+	<div class="container">
+	  <a class="navbar-brand text-uppercase logo border-right" href="#"><img src="assets/img/logo.png" alt="logo" /></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav text-center mr-auto text-uppercase">
+		  <li class="nav-item active">
+			<i class="fa fa-home" aria-hidden="true"></i></br>
+			<a class="nav-link pt-0" href="#">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<i class="fa fa-plane plan-icon" aria-hidden="true"></i>
+			<a class="nav-link pt-0" href="#">Flight</a>
+		  </li>
+		  <li class="nav-item">
+			<i class="fas fa-bed" aria-hidden="true"></i>
+			<a class="nav-link pt-0" href="#">Hotel</a>
+		  </li>
+		  <li class="nav-item dropdown mt-2 ">
+			<a class="nav-link dropdown-toggle more" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  <i class="fa fa-plus" aria-hidden="true" style="font-size:8px;"></i> More
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			  <a class="dropdown-item" href="#">Action</a>
+			  <a class="dropdown-item" href="#">Another action</a>
+			  <div class="dropdown-divider"></div>
+			  <a class="dropdown-item" href="#">Something else here</a>
+			</div>
+		  </li>
+		  
+		</ul>
+			
+		 <ul class="list-inline m-0 headerRightMenu">
+
+			<li class="nav-item dropdown list-inline-item mr-0">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  My Account |  My Booking
+			</a>
+			<div class="dropdown-menu accountDropdown arrow arrow-top" aria-labelledby="navbarDropdown">
+			<div class="profileSection">
+			  <div class="profileImg">
+				<span><i class="fa fa-user" aria-hidden="true"></i></span>
+			  </div>
+			  <div class="profileText">
+				<ul>
+					<li>My Booking</li>
+					<li></li>
+				</ul>
+			  </div>
+			  </div>
+			  <button type="button">Login</button>
+			  <p class="secondaryText">Don't have an account<a href="#" class="link">Register Here</a></p>
+			</div>
+		  </li>
+		  <li class="nav-item dropdown list-inline-item mr-0">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  Support
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			  <a class="dropdown-item" href="#">Action</a>
+			  <a class="dropdown-item" href="#">Another action</a>
+			  <div class="dropdown-divider"></div>
+			  <a class="dropdown-item" href="#">Something else here</a>
+			</div>
+		  </li>
+		  <li class="nav-item list-inline-item mr-0">
+			<a class="nav-link" href="#">Pay Online</a>
+		  </li>
+		  <li class="nav-item list-inline-item mr-0">
+			<a class="nav-link" href="#">My Trip</a>
+		  </li>
+		   <li class="nav-item list-inline-item mr-0 border-left">
+			<a class="nav-link" href="#"><img src="assets/img/am-flag-icon.png" alt="image" class="flag-icon"/></a>
+		  </li>
+		  <li class="nav-item list-inline-item mr-0 border-right">
+			<a class="nav-link" href="#">$</a>
+		  </li>
+		 </ul>
+	  </div>
+	  </div>
+	</nav>
+	
+</header>
+<!-- Header End-->
+<!--Section Login Start-->
+<section class="loginPage">
+	<div class="registrationFormDiv mx-auto">
+		<div class=" registrationLeftDiv text-center ">
+			<div class="loginIcon arrow-bottom arrow-bottom-border">
+				<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+			</div>
+			<div class="loginForm">
+				<h5 class="primaryText"><strong>Get the full experienc </strong></h5>
+				<p class="SecondayText">Track prices, make trip planning easier and enjoy faster booking.</p>
+				<form>
+					<div class="input-group">
+					<input type="text" placeholder="Usename" class="form-control">
+					</div>
+					<div class="input-group">
+					<input type="text" placeholder="Password" class="form-control">
+					</div>
+					<div class="float-left checkboxForgetl">
+					<input type="checkbox"><label>Remember Me</label>
+					</div>
+					<div class="float-right checkboxForgetl">
+						<a href="#">Forgot Password</a>
+					</div>
+					<button type="submit" class="form-control">Continue</button>
+					<p class="checkboxForgetl">By proceeding, you agree with our<a href="#" class="link">Terms of Services</a><a href="#" class="link">Privacy Policy </a>& <a href=""class="link">Master user Agreement</a></p>
+				</form>
+				<hr>
+				<!--<div class="google-btn">
+				  <div class="google-icon-wrapper">
+					<img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+				  </div>
+				  <p class="btn-text"><b>Sign in with google</b></p>
+				</div>-->
+				<p class="SecondayText">Don’t have an account?  <a href="#" class="link">Register Here.</a></p>
+			</div>
+		</div>
+		<div class="registrationRightDiv ">
+			<h5 class="primaryText">Get the full experience</h5>
+			<p class="SecondayText">Track prices, make trip planning easier and enjoy faster booking.</p>
+			<div class="border-botted"></div>
+			<ul class="RegistrationPoints">
+				<li ><span class="primaryText">Log in book faster</span>
+				</br>
+				 <span class="SecondayText">Store up your personal details to speed up future purchase</span>
+				</li>
+				<li><span class="primaryText">Log in book faster</span>
+				</br>
+				 <span class="SecondayText">Store up your personal details to speed up future purchase</span>
+				</li>
+				<li><span class="primaryText">Log in book faster</span>
+				</br>
+				 <span class="SecondayText">Store up your personal details to speed up future purchase</span>
+				</li>
+				<li><span class="primaryText">Log in book faster</span>
+				</br>
+				 <span class="SecondayText">Store up your personal details to speed up future purchase</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!--Section Login End-->
+<!--Footer Section Start-->
+<!--<footer class="py-5">
+	<hr>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-12 col-12 footerSection">
+				<h5 class="text-uppercase footerHeading">Need journey ticket help ?</h5>
+				<div class="needHelp mb-3">
+					<img src="assets/img/image20.png" alt="call" class="float-left call-icon mr-1"/>
+					<span>Got Questions? Call 24/7 !</span>
+					<p class="callUs">Call Us : +(1) 800 123 6766</p>
+				</div>
+				<div class="clearfix"></div>
+				<div class="contactInfo">
+					<h6><strong>Contact Info</strong></h6>
+					<p>Address is a collection of information, Presented in a mostly ﬁxed format, used</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-12 col-12 footerSection ">
+				
+				<ul class="pl-4">
+				<h5 class="text-uppercase footerHeading">COMPANY</h5>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Terms of Use</a></li>
+						<li><a href="#">Privacy Statement </a></li>
+						<li><a href="#">Give Us FeedBacks</a></li>
+						<li><a href="#">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-12 col-12 footerSection pl-3">
+				
+				<ul class="pl-4">
+				<h5 class="text-uppercase footerHeading">OTHER SERVICES</h5>
+						<li><a href="#">Investor Relations </a></li>
+						<li><a href="#">Rewards Program </a></li>
+						<li><a href="#">PointsPLUS </a></li>
+						<li><a href="#">Partners </a></li>
+						<li><a href="#">List Journey Tickets</a></li>
+						<li><a href="#">Sitemap</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-12 col-12 footerSection">
+				<h5 class="text-uppercase footerHeading">FOLLOW US ON</h5>
+				<p>Sign up for our mailing list to get latest update and offers. </p>
+					 <div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="Enter Your Email">
+						<div class="input-group-append">
+							<button class="btn btn-secondary py-0" type="button" >
+							SUBMIT
+							</button>
+						</div>
+					</div>
+					<ul class="list-inline social-buttons pl-0" >
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fab fa-facebook-f"></i>
+						</a>
+					  </li>
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fab fa-twitter"></i>
+						</a>
+					  </li>
+					  
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fab fa-youtube"></i>
+						</a>
+					  </li>
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fab fa-instagram"></i>
+						</a>
+					  </li>
+					  <li class="list-inline-item">
+						<a href="#">
+						  <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+						</a>
+					  </li>
+				</ul>				
+			</div>
+		</div>
+	</div>
+</footer>
+<!--Footer Section End-->
+<!--<hr>
+<!--CopyRight section start-->
+<!--<section class="copyRight">
+	<div class="container">
+		<div class="row">
+		<div class="col-12">
+		<p class="m-0 float-left">© 2019 Journeyticket.com Designed And Developed By Tkies.com</p>
+		<ul class="list-inline float-right">
+			<li class="list-inline-item" ><a href="#" class="border-right pr-3">Privacy Policy</a></li>
+			<li class="list-inline-item"><a href="#">Terms & Condiations</a></li>
+		</ul>
+		</div>
+		</div>
+	</div>
+</section>-->
+<!--CopyRight section end-->
+  <!--Jquery file-->
+ <script src="assets/js/jquery/jquery.min.js"></script>
+  <!--Propper min.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <!---Bootstrap JavaScript file-->
+  <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+  
+  <!--Jquery ui js-->
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <!-- Plugin JavaScript -->
+ <!--<script src="assets/jquery-easing/jquery.easing.min.js"></script>-->
+   <!-- Custom scripts for this template -->
+  <!--<script src="assets/stylish-portfolio.min.js"></script>-->
+  <!--Animation js-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+		AOS.init();
+  </script>
+  </body>
+</html>
